@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="StaffManageSystem_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/staffsystem.css" rel="stylesheet" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $("ul#tabs > li > a").on('click', function () {
+                $(this).parent("li").addClass("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+        <div class="navbar">
+          <div class="navbar-inner">
+           <div class="container" style="margin-left:70px;">
+              <ul id="tabs" class="nav">
+              <li>
+                <a href="CustomerManagement.aspx">Customer</a>
+                  </li>
+                  <li><a href="ReservationManagement.aspx">Reservation</a></li>
+                  <li><a href="Sales.aspx">Sales</a></li>
+                  <li><a href="Hotel.aspx">Hotel</a></li>
+                  <li><a href="Room.aspx">Room</a></li>
+                  <li><a href="Item.aspx">Item</a></li>
+                  <li><a href="Packages.aspx">Package</a></li>
+                  <li><a href="Offering.aspx">Offering</a></li>
+                  <li><a href="Staff.aspx">Staff</a></li>
+            </ul>
+               <a class="brand" href="#" style="float:right;">Allegra Hotel</a>
+           </div>
+          </div>
+         </div>
+      <div class="container">
+        <h1 style="text-align:center;">Allegra Hotels Management System</h1>
+        <div class="row-fluid" style="background-color:skyblue;">
+            <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
+                <ItemTemplate>
+                      <strong>StaffNo:</strong> &nbsp;<asp:Label ID="StaffNoLabel" runat="server" Text='<%# Eval("staffNo") %>' /> &nbsp;&nbsp;&nbsp;&nbsp;<strong>Name:</strong>&nbsp;<asp:Label ID="nameLabel" runat="server" Text='<%# Eval("firstName") + ""+ Eval("lastName") %>'/>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Position:</strong>&nbsp;<asp:Label ID="positionLabel" runat="server" Text='<%# Eval("position") %>'/>
+                     <asp:Button ID="Button1" runat="server" Text="Logout" class="btn" style="margin-left:500px;" OnClick="LogoutButton_Click"/>
+                </ItemTemplate>
+            </asp:FormView>
+        </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnectionString1 %>" SelectCommand="SELECT [firstName], [lastName], [position], [staffNo] FROM [Staff]"></asp:SqlDataSource>
+        <br/>
+
+        
+    </div>
+    <div class="maincontent">
+       <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+       </asp:ContentPlaceHolder>
+    </div>
+        
+    </form>
+</body>
+</html>
