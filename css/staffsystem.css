@@ -1,0 +1,16 @@
+body {
+  background-image: url(../img/background3.jpg);
+  background-attachment:fixed;
+}
+
+.maincontent {
+	text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+input, textarea, .uneditable-input {
+    width:120px;
+}
