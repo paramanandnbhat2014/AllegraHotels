@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="Header" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+         $(document).ready(function () {
+             //Handles menu drop down
+             $('.dropdown-menu').find('form').click(function (e) {
+                 e.stopPropagation();
+             });
+         });
+    </script>
+    
+    <script>
+            jQuery(document).ready(function ($) {
+                $("ul#tabs > li > a").on('click', function () {
+                    $(this).parent("li").addClass("active");
+                });
+            });
+    </script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+ <div class="container">
+  <div class="row">
+    <!-- Hotel Logo -->
+    <div class="span3 logo">
+      <a href="HomePage.aspx"><img src="img\HotelLogo.png" /></a>
+    </div>
+
+    <!-- Contact and help link -->
+        <div class="span9">
+            <div class="row span5 offset5" style="margin-top: 10px;">
+                <a class="toplink" href="GetPassword.aspx">Forgot Password</a>
+                |
+                <a class="toplink" href="AboutPage.aspx#contact">Contact Us:</a>
+                043199412 |
+                <a class="toplink" href="FAQpage.aspx">FAQs</a>
+            </div>  
+          <div class="row">
+              <div class="topbutton span6 offset3">
+                    <!-- Login and join from here -->
+                     <div class="form-inline" style="float: right;">
+                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                          <ContentTemplate>
+                              <asp:TextBox ID="userNameTextBox" runat="server" placeholder="Username" CssClass="span2"></asp:TextBox>
+                                 <asp:TextBox ID="passwdTextBox" type="password" runat="server" placeholder="Password" CssClass="span2"></asp:TextBox>
+                                 <asp:Label ID="LoginMessage" runat="server" Text=""></asp:Label>
+                                 <asp:Button ID="LoginButton" runat="server" Text="Login" CssClass="btn" OnClick="LoginButton_Click"/>
+                                 <asp:Button ID="JoinButton" runat="server" Text="Join" CssClass="btn" OnClick="JoinButton_Click"/>
+                                <asp:HyperLink ID="myAccount" runat="server" NavigateUrl="CustomerAccount.aspx">My Account</asp:HyperLink>
+                                 <asp:Button ID="LogoutButton" runat="server" Text="Logout" CssClass="btn" OnClick="LogoutButton_Click"/>
+                          </ContentTemplate>
+                         </asp:UpdatePanel>
+                    </div>
+              </div>
+          </div>
+
+        <!-- Navigation Bar -->
+          <div class="row">
+            <nav class="navbar span9">
+              <div class="navbar-inner">
+                <ul id="tabs" class="nav">
+                  <li><a href="HomePage.aspx">Home</a> </li>
+                    <li class="dropdown">
+                     <a href="RoomPage.aspx" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Room</a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="RoomPage.aspx">Standard Room</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="BalconyRoom.aspx">Superior Balcony Room</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="DeluxeRoom.aspx">Deluxe Room</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="SuiteRoom.aspx">Suite</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="ApartmentRoom.aspx">Apartment</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                     <a href="PackagePage.aspx" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Package</a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="PackagePage.aspx">All Packages</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="ComedyPackage.aspx">Comdey Festival Package</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="AisanRestaurantPackage.aspx">Aisan Restaurant Package</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="ArtCulturePackage.aspx">Melbourne Arts & Culture Package</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="SpaPackage.aspx">East Day Spa Package</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="DinningPackage.aspx">Evening Dining Package</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="EnjoyMovingPackage.aspx">Enjoy Moving Image Package</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="FoodTourPackage.aspx">Carlton Food Tour Package</a></li>
+                      </ul>
+                    </li>
+                  <li><a href="Events.aspx">Events</a></li>
+                  <li><a href="EcotourismPage.aspx">Ecotourism</a></li>
+                  <li><a href="AboutPage.aspx">About</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+     <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+     </asp:SiteMapPath>
+      <div>
+        <asp:ContentPlaceHolder id="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+     <hr/>
+      <footer>
+        <p>Copyright &copy; 2013 Allegra Hotels Ltd. All rights reserved.</p>
+          <p>Designed by The Furious Five team.</p>
+      </footer>
+     </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="HomePage.aspx" title="Home"  description="">
+      <siteMapNode url="RoomPage.aspx" title="Standard Room"  description="" >
+          <siteMapNode url="BalconyRoom.aspx" title="Balcony Room" />
+          <siteMapNode url="DeluxeRoom.aspx" title="Deluxe Room" />
+          <siteMapNode url="SuiteRoom.aspx" title="Suite Room" />
+          <siteMapNode url="ApartmentRoom.aspx" title="Apartment Room" />
+      </siteMapNode>
+      <siteMapNode url="PackagePage.aspx" title="Package"  description="" >
+        <siteMapNode url="AisanRestaurantPackage.aspx" title="Asian Restaurant Package" />
+        <siteMapNode url="ArtCulturePackage.aspx" title="Melbourne Arts and Culture Package" />
+        <siteMapNode url="ComedyPackage.aspx" title="Comedy Festival Package" />
+        <siteMapNode url="DinningPackage.aspx" title="Evening Dinning Package" />
+        <siteMapNode url="EnjoyMovingPackage.aspx" title="Enjoy Moving Image Package" />
+        <siteMapNode url="FoodTourPackage.aspx" title="Carlton Food Tour Package" />
+        <siteMapNode url="SpaPackage.aspx" title="East Day Spa Package" />
+        <siteMapNode url="PackageConfirmation.aspx" title="Reservation Review" />
+      </siteMapNode>
+      <siteMapNode url="Events.aspx" title="Event"  description="" ></siteMapNode>
+      <siteMapNode url="EcotourismPage.aspx" title="Ecotourism"  description="" >
+        <siteMapNode url="EcoTravelOperators.aspx" title="Eco Travel Operators" />
+        <siteMapNode url="GreenyGreen.aspx" title="Greeny Green Operators" />
+        <siteMapNode url="LocalMelbourneOperators.aspx" title="Local Melbourne Operators" />
+      </siteMapNode>
+      <siteMapNode url="AboutPage.aspx" title="About"  description="" ></siteMapNode>
+      <siteMapNode url="FAQpage.aspx" title="FAQ"  description="" ></siteMapNode>
+      <siteMapNode url="CustomerAccount.aspx" title="My Account"  description="" ></siteMapNode>
+      <siteMapNode url="GetPassword.aspx" title="Forgot Password"  description="" ></siteMapNode>
+      <siteMapNode url="JoinPage.aspx" title="Join Allegra Hotel"  description="" ></siteMapNode>
+      <siteMapNode url="AvailableRooms.aspx" title="Available Rooms"  description="" >
+        <siteMapNode url="ReservationConfirmation.aspx" title="Reservation Review">
+          <siteMapNode url="PaymentInfo.aspx" title="Payment" />
+        </siteMapNode>
+      </siteMapNode>
+  </siteMapNode>
+</siteMap>
